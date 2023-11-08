@@ -1,5 +1,6 @@
 package org.zutjmx.consola;
 
+import com.github.javafaker.Faker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -11,6 +12,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 	private static Logger LOG = LoggerFactory.getLogger(ConsolaApplication.class);
 
+	private Faker faker = new Faker();
+
 	public static void main(String[] args) {
 		LOG.info("Iniciando la aplicación de consola.");
 		SpringApplication.run(ConsolaApplication.class, args);
@@ -21,8 +24,11 @@ public class ConsolaApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		LOG.info("EJECUTANDO : command line runner");
 
-		for (int i = 0; i < args.length; ++i) {
+		/*for (int i = 0; i < args.length; ++i) {
 			LOG.info("args[{}]: {}", i, args[i]);
-		}
+		}*/
+
+		String funnyName = faker.funnyName().name();
+		LOG.info("funnyName = " + funnyName);
 	}
 }
