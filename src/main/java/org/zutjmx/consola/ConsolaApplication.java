@@ -31,6 +31,7 @@ public class ConsolaApplication implements CommandLineRunner {
 		}*/
 
 		LOG.info("Nombre chistoso: " + fakerService.nombreChistoso());
+		LOG.info("Persona: " + fakerService.generaPersona().toString());
 
 	}
 }
