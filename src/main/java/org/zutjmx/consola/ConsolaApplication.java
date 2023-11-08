@@ -1,18 +1,20 @@
 package org.zutjmx.consola;
 
-import com.github.javafaker.Faker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.zutjmx.consola.services.FakerService;
 
 @SpringBootApplication
 public class ConsolaApplication implements CommandLineRunner {
 
-	private static Logger LOG = LoggerFactory.getLogger(ConsolaApplication.class);
+	private static final Logger LOG = LoggerFactory.getLogger(ConsolaApplication.class);
 
-	private Faker faker = new Faker();
+	@Autowired
+	private FakerService fakerService;
 
 	public static void main(String[] args) {
 		LOG.info("Iniciando la aplicación de consola.");
@@ -28,7 +30,7 @@ public class ConsolaApplication implements CommandLineRunner {
 			LOG.info("args[{}]: {}", i, args[i]);
 		}*/
 
-		String funnyName = faker.funnyName().name();
-		LOG.info("funnyName = " + funnyName);
+		LOG.info("Nombre chistoso: " + fakerService.nombreChistoso());
+
 	}
 }
