@@ -7,6 +7,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.zutjmx.consola.services.FakerService;
+import org.zutjmx.consola.util.Levenshtein;
+
+import java.util.List;
 
 @SpringBootApplication
 public class ConsolaApplication implements CommandLineRunner {
@@ -15,6 +18,9 @@ public class ConsolaApplication implements CommandLineRunner {
 
 	@Autowired
 	private FakerService fakerService;
+
+	@Autowired
+	private Levenshtein levenshtein;
 
 	public static void main(String[] args) {
 		LOG.info("Iniciando la aplicación de consola.");
@@ -32,6 +38,16 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("Nombre chistoso: " + fakerService.nombreChistoso());
 		LOG.info("Persona: " + fakerService.generaPersona().toString());
+
+		List<Integer> listaDeEnteros = fakerService.generaArregloDeEnteros(11);
+		LOG.info("Lista de enteros: " + listaDeEnteros.toString());
+		LOG.info("Lista de enteros ordenandos: ");
+		listaDeEnteros.stream().sorted().forEach(System.out::println);
+
+		String palabraUno = "Techie Delight";
+		String palabraDos = "Tech Delight";
+		double similitud = levenshtein.findSimilarity(palabraUno, palabraDos);
+		LOG.info("Similitud entre " + palabraUno + " y " + palabraDos + " = " + similitud);
 
 	}
 }

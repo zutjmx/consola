@@ -4,6 +4,8 @@ import com.github.javafaker.Faker;
 import org.springframework.stereotype.Service;
 import org.zutjmx.consola.models.Persona;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 @Service
@@ -23,5 +25,14 @@ public class FakerService {
         persona.setUserName(faker.internet().userAgentAny());
         persona.setFechaNacimiento(faker.date().birthday(20,90));
         return persona;
+    }
+
+    public List<Integer> generaArregloDeEnteros(int cuantos) {
+        List<Integer> arreglo = new ArrayList<>();
+        for (int i = 0; i < cuantos; i++) {
+            Integer numero = faker.number().randomDigit();
+            arreglo.add(numero);
+        }
+        return arreglo;
     }
 }
