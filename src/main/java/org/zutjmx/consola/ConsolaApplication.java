@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.zutjmx.consola.services.FakerService;
+import org.zutjmx.consola.util.FlujoDeControl;
 import org.zutjmx.consola.util.Levenshtein;
 
 import java.util.List;
@@ -21,6 +22,9 @@ public class ConsolaApplication implements CommandLineRunner {
 
 	@Autowired
 	private Levenshtein levenshtein;
+
+	@Autowired
+	private FlujoDeControl flujoDeControl;
 
 	public static void main(String[] args) {
 		LOG.info("Iniciando la aplicación de consola.");
@@ -48,6 +52,9 @@ public class ConsolaApplication implements CommandLineRunner {
 		String palabraDos = "Tech Delight";
 		double similitud = levenshtein.findSimilarity(palabraUno, palabraDos);
 		LOG.info("Similitud entre " + palabraUno + " y " + palabraDos + " = " + similitud);
+
+		LOG.info("Tema de flujos de control");
+		flujoDeControl.SentenciaSi();
 
 	}
 }
