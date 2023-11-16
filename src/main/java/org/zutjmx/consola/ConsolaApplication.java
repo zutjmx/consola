@@ -54,7 +54,13 @@ public class ConsolaApplication implements CommandLineRunner {
 		LOG.info("Similitud entre " + palabraUno + " y " + palabraDos + " = " + similitud);
 
 		LOG.info("Tema de flujos de control");
-		flujoDeControl.SentenciaSi();
+		LOG.info("Sentencia if");
+		flujoDeControl.sentenciaSi();
 
+		LOG.info("Sentencia if-else");
+		flujoDeControl.sentenciaSiCasoContrario();
+
+		LOG.info("Número de días de cada mes.");
+		flujoDeControl.numDiasMes();
 	}
 }
