@@ -70,6 +70,24 @@ public class FlujoDeControl {
         }
         System.out.println("El mes " + numMes + " (" + mesEnLetra(numMes) + ")" + ", del año " + numAnio + ", tiene " + numeroDias + " días.");
     }
+
+    public void switchCase() {
+        int numero = this.faker.number().randomDigit();
+        switch (numero) {
+            case 1:
+                System.out.println("Se fue al 1, numero = " + numero);
+                break;
+            case 2:
+                System.out.println("Se fue al 2, numero = " + numero);
+                break;
+            case 3:
+                System.out.println("Se fue al 3, numero = " + numero);
+                break;
+            default:
+                System.out.println("Se fue al default, numero = " + numero);
+                break;
+        }
+    }
     
     public String mesEnLetra(int numMes) {
         String nombreMes = "";

@@ -62,5 +62,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("Número de días de cada mes.");
 		flujoDeControl.numDiasMes();
+
+		LOG.info("Sentencia switch-case");
+		flujoDeControl.switchCase();
 	}
 }
