@@ -116,7 +116,10 @@ public class FlujoDeControl {
     }
 
     public void cicloFor() {
-
+        int numeroMaximo = this.faker.number().numberBetween(10,30);
+        for (int i = 0; i < numeroMaximo; i++) {
+            System.out.println("Iteración número: " + i + " de un total de " + numeroMaximo);
+        }
     }
     
     public String mesEnLetra(int numMes) {
