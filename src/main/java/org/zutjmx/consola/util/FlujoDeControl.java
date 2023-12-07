@@ -71,6 +71,32 @@ public class FlujoDeControl {
         System.out.println("El mes " + numMes + " (" + mesEnLetra(numMes) + ")" + ", del año " + numAnio + ", tiene " + numeroDias + " días.");
     }
 
+    public void numDiasMesSwitchCase() {
+        Calendar calendario = Calendar.getInstance();
+        int numMes = this.faker.number().numberBetween(1,12);
+        int numAnio = this.faker.number().numberBetween(1900,calendario.get(Calendar.YEAR));
+        int numeroDias = 0;
+        switch (numMes) {
+            case 1,3,5,7,8,10,12:
+                numeroDias = 31;
+                break;
+            case 4,6,9,11:
+                numeroDias = 30;
+                break;
+            case 2:
+                if (numAnio%400 == 0 || ((numAnio%4 == 0) && !(numAnio%100 == 0))) {
+                    numeroDias = 29;
+                } else {
+                    numeroDias = 28;
+                }
+                break;
+            default:
+                break;
+        }
+
+        System.out.println("El mes " + numMes + " (" + mesEnLetra(numMes) + ")" + ", del año " + numAnio + ", tiene " + numeroDias + " días.");
+    }
+
     public void switchCase() {
         int numero = this.faker.number().randomDigit();
         switch (numero) {
@@ -87,6 +113,10 @@ public class FlujoDeControl {
                 System.out.println("Se fue al default, numero = " + numero);
                 break;
         }
+    }
+
+    public void cicloFor() {
+
     }
     
     public String mesEnLetra(int numMes) {
