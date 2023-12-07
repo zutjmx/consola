@@ -71,5 +71,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("Ciclo For");
 		flujoDeControl.cicloFor();
+
+		LOG.info("Iterar sobre un arreglo con For");
+		flujoDeControl.arregloConFor();
 	}
 }

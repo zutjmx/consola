@@ -5,7 +5,6 @@ import lombok.*;
 import org.springframework.stereotype.Service;
 
 import java.util.Calendar;
-import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -116,9 +115,37 @@ public class FlujoDeControl {
     }
 
     public void cicloFor() {
-        int numeroMaximo = this.faker.number().numberBetween(10,30);
-        for (int i = 0; i < numeroMaximo; i++) {
+        int numeroMaximo = this.faker.number().numberBetween(10,20);
+        
+        //for con incremento
+        System.out.println("For con incremento");
+        for (int i = 0; i <= numeroMaximo; i++) {
             System.out.println("Iteración número: " + i + " de un total de " + numeroMaximo);
+        }
+        
+        //for con decremento
+        System.out.println("For con decremento");
+        for (int i = numeroMaximo; i >= 0; i--) {
+            System.out.println("Iteración número: " + i + " de un total de " + numeroMaximo);
+        }
+
+        //for con 2 variables
+        System.out.println("For con 2 variables");
+        for (int i = 1, j = 10; i < j; i++, j--) {
+            System.out.println("i = " + i + ", j = " + j);
+        }
+    }
+
+    public void arregloConFor() {
+        int tamanioArr = this.faker.number().numberBetween(20,30);
+        String[] nombres = new String[tamanioArr];
+
+        for (int i = 0; i < nombres.length; i++) {
+            nombres[i] = this.faker.gameOfThrones().character();
+        }
+
+        for (int i = 0; i < nombres.length; i++) {
+            System.out.println("nombres["+i+"]: " + nombres[i]);
         }
     }
     
