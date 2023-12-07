@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.zutjmx.consola.services.ApiColombia;
 import org.zutjmx.consola.services.FakerService;
 import org.zutjmx.consola.util.FlujoDeControl;
 import org.zutjmx.consola.util.Levenshtein;
@@ -25,6 +26,9 @@ public class ConsolaApplication implements CommandLineRunner {
 
 	@Autowired
 	private FlujoDeControl flujoDeControl;
+
+	@Autowired
+	private ApiColombia apiColombia;
 
 	public static void main(String[] args) {
 		LOG.info("Iniciando la aplicación de consola.");
@@ -74,5 +78,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("Iterar sobre un arreglo con For");
 		flujoDeControl.arregloConFor();
+
+		LOG.info("Llamando una ApiRest con OkHttp");
+		apiColombia.GetInfoGeneral();
 	}
 }
