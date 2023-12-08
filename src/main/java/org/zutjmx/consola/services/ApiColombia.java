@@ -1,7 +1,6 @@
 package org.zutjmx.consola.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
