@@ -20,10 +20,14 @@ public class ApiColombia {
                 .url(url)
                 .build();
         try {
-            Response response = client.newCall(request).execute();
-            System.out.println("Respuesta de ApiColombia-InfoGeneral: " + response.body().string());
-            //ApiColombiaInfoGeneral apiColombiaInfoGeneral = om.readValue(response.body().string(), ApiColombiaInfoGeneral.class);
-            //System.out.println("apiColombiaInfoGeneral = " + apiColombiaInfoGeneral.toString());
+            String respuesta;
+            try (Response response = client.newCall(request).execute()) {
+                assert response.body() != null;
+                respuesta = response.body().string();
+            }
+            System.out.println("Respuesta de ApiColombia-InfoGeneral: " + respuesta);
+            ApiColombiaInfoGeneral apiColombiaInfoGeneral = om.readValue(respuesta, ApiColombiaInfoGeneral.class);
+            System.out.println("apiColombiaInfoGeneral = " + apiColombiaInfoGeneral.toString());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
