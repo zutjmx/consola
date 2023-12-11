@@ -81,5 +81,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("Llamando una ApiRest con OkHttp");
 		apiColombia.GetInfoGeneral();
+
+		LOG.info("Ciclo While");
+		flujoDeControl.cicloWhile();
 	}
 }

@@ -148,6 +148,14 @@ public class FlujoDeControl {
             System.out.println("nombres["+i+"]: " + nombres[i]);
         }
     }
+
+    public void cicloWhile() {
+        int indice = 0;
+        while (indice < 5) {
+            System.out.println("indice = " + indice);
+            indice++;
+        }
+    }
     
     public String mesEnLetra(int numMes) {
         String nombreMes = "";
