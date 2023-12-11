@@ -84,5 +84,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("Ciclo While");
 		flujoDeControl.cicloWhile();
+
+		LOG.info("Ciclo Do-While");
+		flujoDeControl.cicloDoWhile();
 	}
 }

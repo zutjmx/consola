@@ -156,6 +156,14 @@ public class FlujoDeControl {
             indice++;
         }
     }
+
+    public void cicloDoWhile() {
+        int indice = this.faker.number().numberBetween(10,20);
+        do {
+            System.out.println("indice = " + indice);
+            indice--;
+        } while (indice >= 0);
+    }
     
     public String mesEnLetra(int numMes) {
         String nombreMes = "";
