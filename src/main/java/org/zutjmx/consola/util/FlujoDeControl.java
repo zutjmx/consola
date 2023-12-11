@@ -176,11 +176,16 @@ public class FlujoDeControl {
             nombres.add(nombre);
         }
 
-        System.out.println("Se van a imprimir los nombres en mayúsculas:");
+        System.out.println("Se van a imprimir los nombres en mayúsculas, con método forEach:");
         nombres.forEach(nombre -> {
             nombre = nombre.toUpperCase(Locale.ROOT);
             System.out.println("nombre = " + nombre);
         });
+
+        System.out.println("Se van a imprimir los nombres en mayúsculas, con ciclo forEach:");
+        for (String nombre : nombres) {
+            System.out.println("nombre = " + nombre.toLowerCase(Locale.ROOT));
+        }
 
     }
     
