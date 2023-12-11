@@ -87,5 +87,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("Ciclo Do-While");
 		flujoDeControl.cicloDoWhile();
+
+		LOG.info("Ciclo ForEach");
+		flujoDeControl.cicloForEach();
 	}
 }

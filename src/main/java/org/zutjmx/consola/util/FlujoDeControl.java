@@ -4,7 +4,10 @@ import com.github.javafaker.Faker;
 import lombok.*;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
+import java.util.Locale;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -163,6 +166,22 @@ public class FlujoDeControl {
             System.out.println("indice = " + indice);
             indice--;
         } while (indice >= 0);
+    }
+
+    public void cicloForEach() {
+        List<String> nombres = new ArrayList<>();
+        int dimension = this.faker.number().numberBetween(10,20);
+        for (int i = 0; i < dimension; i++) {
+            String nombre = this.faker.lebowski().actor();
+            nombres.add(nombre);
+        }
+
+        System.out.println("Se van a imprimir los nombres en mayúsculas:");
+        nombres.forEach(nombre -> {
+            nombre = nombre.toUpperCase(Locale.ROOT);
+            System.out.println("nombre = " + nombre);
+        });
+
     }
     
     public String mesEnLetra(int numMes) {
