@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.zutjmx.consola.services.ApiColombia;
 import org.zutjmx.consola.services.FakerService;
+import org.zutjmx.consola.services.ManejoDeCadena;
 import org.zutjmx.consola.util.FlujoDeControl;
 import org.zutjmx.consola.util.Levenshtein;
 
@@ -29,6 +30,9 @@ public class ConsolaApplication implements CommandLineRunner {
 
 	@Autowired
 	private ApiColombia apiColombia;
+
+	@Autowired
+	private ManejoDeCadena manejoDeCadena;
 
 	public static void main(String[] args) {
 		LOG.info("Iniciando la aplicación de consola.");
@@ -90,5 +94,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("Ciclo ForEach");
 		flujoDeControl.cicloForEach();
+
+		LOG.info("Quiz de LinkedIn");
+		manejoDeCadena.subCadena();
 	}
 }
