@@ -97,5 +97,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("Quiz de LinkedIn");
 		manejoDeCadena.subCadena();
+
+		LOG.info("Búsqueda dentro de una cadena con for");
+		flujoDeControl.busquedaConForAnidado();
 	}
 }

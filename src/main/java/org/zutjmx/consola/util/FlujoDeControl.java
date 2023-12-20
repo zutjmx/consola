@@ -188,6 +188,22 @@ public class FlujoDeControl {
         }
 
     }
+
+    public void busquedaConForAnidado() {
+        String fraseLorem = this.faker.lorem().paragraph();
+        int longitud = fraseLorem.length();
+        int cantidad = 0;
+        char letra = faker.lorem().character();
+        System.out.println("fraseLorem = " + fraseLorem);
+        System.out.println("letra = " + letra);
+        for (int i = 0; i < longitud; i++) {
+            if (fraseLorem.charAt(i) != letra) {
+                continue;
+            }
+            cantidad++;
+        }
+        System.out.println("Se encontró la letra '" + letra + "' " + cantidad + " veces dentro de la cadena");
+    }
     
     public String mesEnLetra(int numMes) {
         String nombreMes = "";
