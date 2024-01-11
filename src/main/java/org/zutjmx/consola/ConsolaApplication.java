@@ -110,5 +110,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("autoBoxingInteger");
 		wrapperInteger.autoBoxingInteger();
+
+		LOG.info("wrapperOperadoresRelacionales");
+		wrapperInteger.wrapperOperadoresRelacionales();
 	}
 }

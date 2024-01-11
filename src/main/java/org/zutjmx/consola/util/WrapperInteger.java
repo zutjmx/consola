@@ -28,6 +28,21 @@ public class WrapperInteger {
         System.out.println("suma = " + suma);
     }
 
+    public void wrapperOperadoresRelacionales() {
+        //int valorNoCero = this.faker.number().randomDigitNotZero();
+        Integer objInt1 = Integer.valueOf(1000);
+        Integer objInt2 = objInt1;
+        System.out.println("objInt1 = " + objInt1);
+        System.out.println("objInt2 = " + objInt2);
+        System.out.println("¿Son el mismo objeto? (objInt1 == objInt2) = " + (objInt1 == objInt2));
+        objInt2 = 1000;
+        System.out.println("objInt1 = " + objInt1);
+        System.out.println("objInt2 = " + objInt2);
+        System.out.println("¿Son el mismo objeto? (objInt1 == objInt2) = " + (objInt1 == objInt2));
+
+        System.out.println("¿Tienen el mismo valor? (objInt1.equals(objInt2)) = " + (objInt1.equals(objInt2)));
+    }
+
     private Integer[] generaArregloDeEnteros(int indice) {
         Integer[] arreglo = new Integer[indice];
         for (int i = 0; i < indice; i++) {
