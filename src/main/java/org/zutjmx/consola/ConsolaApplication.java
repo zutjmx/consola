@@ -105,7 +105,10 @@ public class ConsolaApplication implements CommandLineRunner {
 		LOG.info("Búsqueda dentro de una cadena con for");
 		flujoDeControl.busquedaConForAnidado();
 
-		LOG.info("WrapperInteger");
+		LOG.info("generaObjetoInteger");
 		wrapperInteger.generaObjetoInteger();
+
+		LOG.info("autoBoxingInteger");
+		wrapperInteger.autoBoxingInteger();
 	}
 }

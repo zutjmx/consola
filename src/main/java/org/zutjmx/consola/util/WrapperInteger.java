@@ -15,4 +15,24 @@ public class WrapperInteger {
         System.out.println("numeroIntegerUno = " + numeroIntegerUno);
         System.out.println("numeroIntegerDos = " + numeroIntegerDos);
     }
+
+    public void autoBoxingInteger() {
+        int indice = this.faker.number().numberBetween(1,20);
+        Integer[] enteros = generaArregloDeEnteros(indice);
+        int suma = 0;
+        for (Integer i: enteros) {
+            if (i % 2 == 0) {
+                suma += i;
+            }
+        }
+        System.out.println("suma = " + suma);
+    }
+
+    private Integer[] generaArregloDeEnteros(int indice) {
+        Integer[] arreglo = new Integer[indice];
+        for (int i = 0; i < indice; i++) {
+            arreglo[i] = this.faker.number().randomDigit();
+        }
+        return arreglo;
+    }
 }
