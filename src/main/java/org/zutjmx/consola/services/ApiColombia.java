@@ -21,7 +21,7 @@ public class ApiColombia {
         try {
             String respuesta;
             try (Response response = client.newCall(request).execute()) {
-                assert response.body() != null;
+                //assert response.body() != null;
                 respuesta = response.body().string();
             }
             System.out.println("Respuesta de ApiColombia-InfoGeneral: " + respuesta);

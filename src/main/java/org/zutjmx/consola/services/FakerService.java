@@ -10,7 +10,7 @@ import java.util.Locale;
 
 @Service
 public class FakerService {
-    private final Faker faker = new Faker(new Locale("es-MX"));
+    private final Faker faker = new Faker(Locale.getDefault());
 
     public String nombreChistoso() {
         return this.faker.funnyName().name();
