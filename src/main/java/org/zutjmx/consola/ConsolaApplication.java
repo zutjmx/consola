@@ -11,6 +11,7 @@ import org.zutjmx.consola.services.FakerService;
 import org.zutjmx.consola.services.ManejoDeCadena;
 import org.zutjmx.consola.util.FlujoDeControl;
 import org.zutjmx.consola.util.Levenshtein;
+import org.zutjmx.consola.util.WrapperBoolean;
 import org.zutjmx.consola.util.WrapperInteger;
 
 import java.util.List;
@@ -37,6 +38,9 @@ public class ConsolaApplication implements CommandLineRunner {
 
 	@Autowired
 	private WrapperInteger wrapperInteger;
+
+	@Autowired
+	private WrapperBoolean wrapperBoolean;
 
 	public static void main(String[] args) {
 		LOG.info("Iniciando la aplicación de consola.");
@@ -113,5 +117,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("wrapperOperadoresRelacionales");
 		wrapperInteger.wrapperOperadoresRelacionales();
+
+		LOG.info("wrapperBoolean");
+		wrapperBoolean.metodoPrincipal();
 	}
 }
