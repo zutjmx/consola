@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.zutjmx.consola.services.ApiColombia;
 import org.zutjmx.consola.services.FakerService;
 import org.zutjmx.consola.services.ManejoDeCadena;
+import org.zutjmx.consola.util.EjemploGetClass;
 import org.zutjmx.consola.util.FlujoDeControl;
 import org.zutjmx.consola.util.Levenshtein;
 import org.zutjmx.consola.util.WrapperBoolean;
@@ -41,6 +42,9 @@ public class ConsolaApplication implements CommandLineRunner {
 
 	@Autowired
 	private WrapperBoolean wrapperBoolean;
+
+	@Autowired
+	private EjemploGetClass ejemploGetClass;
 
 	public static void main(String[] args) {
 		LOG.info("Iniciando la aplicación de consola.");
@@ -120,5 +124,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("wrapperBoolean");
 		wrapperBoolean.metodoPrincipal();
+
+		LOG.info("Ejemplo del método GetClass");
+		ejemploGetClass.metodoGetClass();
 	}
 }
