@@ -13,6 +13,7 @@ import org.zutjmx.consola.util.EjemploGetClass;
 import org.zutjmx.consola.util.FlujoDeControl;
 import org.zutjmx.consola.util.Levenshtein;
 import org.zutjmx.consola.util.PasarPorReferencia;
+import org.zutjmx.consola.util.PasarPorReferenciaObjeto;
 import org.zutjmx.consola.util.PasarPorValor;
 import org.zutjmx.consola.util.WrapperBoolean;
 import org.zutjmx.consola.util.WrapperInteger;
@@ -53,6 +54,9 @@ public class ConsolaApplication implements CommandLineRunner {
 
 	@Autowired
 	private PasarPorReferencia pasarPorReferencia;
+
+	@Autowired
+	private PasarPorReferenciaObjeto pasarPorReferenciaObjeto;
 
 	public static void main(String[] args) {
 		LOG.info("Iniciando la aplicación de consola.");
@@ -141,5 +145,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("Ejemplo de pasar por referencia");
 		pasarPorReferencia.metodoPrincipal();
+
+		LOG.info("Ejemplo de pasar por referencia objeto");
+		pasarPorReferenciaObjeto.metodoPrincipal();
 	}
 }
