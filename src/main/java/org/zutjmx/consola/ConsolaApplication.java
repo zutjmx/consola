@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.zutjmx.consola.services.ApiColombia;
 import org.zutjmx.consola.services.FakerService;
 import org.zutjmx.consola.services.ManejoDeCadena;
+import org.zutjmx.consola.util.ConectaConSqlServer;
 import org.zutjmx.consola.util.EjemploGetClass;
 import org.zutjmx.consola.util.EjemploJavaUtilDate;
 import org.zutjmx.consola.util.FlujoDeControl;
@@ -61,6 +62,9 @@ public class ConsolaApplication implements CommandLineRunner {
 
 	@Autowired
 	private EjemploJavaUtilDate ejemploJavaUtilDate;
+
+	@Autowired
+	private ConectaConSqlServer conectaConSqlServer;
 
 	public static void main(String[] args) {
 		LOG.info("Iniciando la aplicación de consola.");
@@ -155,5 +159,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("Ejemplo con java.util.Date");
 		ejemploJavaUtilDate.metodoPrincipal();
+
+		/* LOG.info("Ejemplo para conectarse a una BD de Sql Server");
+		conectaConSqlServer.metodoPrincipal(); */
 	}
 }
