@@ -10,6 +10,7 @@ import org.zutjmx.consola.services.ApiColombia;
 import org.zutjmx.consola.services.FakerService;
 import org.zutjmx.consola.services.ManejoDeCadena;
 import org.zutjmx.consola.util.EjemploGetClass;
+import org.zutjmx.consola.util.EjemploJavaUtilDate;
 import org.zutjmx.consola.util.FlujoDeControl;
 import org.zutjmx.consola.util.Levenshtein;
 import org.zutjmx.consola.util.PasarPorReferencia;
@@ -57,6 +58,9 @@ public class ConsolaApplication implements CommandLineRunner {
 
 	@Autowired
 	private PasarPorReferenciaObjeto pasarPorReferenciaObjeto;
+
+	@Autowired
+	private EjemploJavaUtilDate ejemploJavaUtilDate;
 
 	public static void main(String[] args) {
 		LOG.info("Iniciando la aplicación de consola.");
@@ -148,5 +152,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("Ejemplo de pasar por referencia objeto");
 		pasarPorReferenciaObjeto.metodoPrincipal();
+
+		LOG.info("Ejemplo con java.util.Date");
+		ejemploJavaUtilDate.metodoPrincipal();
 	}
 }
