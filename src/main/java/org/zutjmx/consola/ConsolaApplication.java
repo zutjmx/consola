@@ -12,6 +12,7 @@ import org.zutjmx.consola.services.ManejoDeCadena;
 import org.zutjmx.consola.util.EjemploGetClass;
 import org.zutjmx.consola.util.FlujoDeControl;
 import org.zutjmx.consola.util.Levenshtein;
+import org.zutjmx.consola.util.PasarPorValor;
 import org.zutjmx.consola.util.WrapperBoolean;
 import org.zutjmx.consola.util.WrapperInteger;
 
@@ -45,6 +46,9 @@ public class ConsolaApplication implements CommandLineRunner {
 
 	@Autowired
 	private EjemploGetClass ejemploGetClass;
+
+	@Autowired
+	private PasarPorValor pasarPorValor;
 
 	public static void main(String[] args) {
 		LOG.info("Iniciando la aplicación de consola.");
@@ -127,5 +131,8 @@ public class ConsolaApplication implements CommandLineRunner {
 
 		LOG.info("Ejemplo del método GetClass");
 		ejemploGetClass.metodoGetClass();
+
+		LOG.info("Ejemplo de pasar por valor");
+		pasarPorValor.metodoPrincipal();
 	}
 }
